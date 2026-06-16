@@ -1,189 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read the Capital Press Terms of Service for site usage rules and conditions.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Read the Capital Press Terms of Service for site usage rules and conditions."
+    />
     <title>Terms of Service - Capital Press</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="assets/capitalpress.png">
-    <link rel="apple-touch-icon" href="assets/capitalpress.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/capitalpress.png" />
+    <link rel="apple-touch-icon" href="assets/capitalpress.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <header class="site-header" id="site-header">
-        <div class="header-top">
-            <div class="container header-top-inner">
-                <time class="header-date" id="header-date"></time>
-                <div class="header-actions">
-                    <button class="btn-icon" id="bookmark-toggle" title="Bookmarks" aria-label="View bookmarks">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                        </svg>
-                        <span class="bookmark-count" id="bookmark-count">0</span>
-                    </button>
-                    <button class="btn-icon" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-                        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+      <div class="header-top">
+        <div class="container header-top-inner">
+          <time class="header-date" id="header-date"></time>
+          <div class="header-actions">
+            <button
+              class="btn-icon"
+              id="bookmark-toggle"
+              title="Bookmarks"
+              aria-label="View bookmarks"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+              </svg>
+              <span class="bookmark-count" id="bookmark-count">0</span>
+            </button>
+            <button
+              class="btn-icon"
+              id="theme-toggle"
+              title="Toggle dark mode"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                class="icon-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+              <svg
+                class="icon-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="header-main">
-            <div class="container header-main-inner">
-                <a href="index.html" class="logo" id="logo">
-                    <img src="assets/capitalpress.png" alt="Capital Press" class="logo-image">
-                </a>
-                <div class="search-bar" id="header-search">
-                    <form action="search.html" method="GET" class="search-form" id="search-form">
-                        <input type="search" name="q" placeholder="Search news..." class="search-input"
-                            id="search-input" autocomplete="off">
-                        <button type="submit" class="search-btn" aria-label="Search">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-                <button class="mobile-search-toggle btn-icon" id="mobile-search-toggle" aria-label="Toggle search">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
-                </button>
-            </div>
+      </div>
+      <div class="header-main">
+        <div class="container header-main-inner">
+          <a href="index.html" class="logo" id="logo">
+            <img
+              src="assets/capitalpress.png"
+              alt="Capital Press"
+              class="logo-image"
+            />
+          </a>
+          <div class="search-bar" id="header-search">
+            <form
+              action="search.html"
+              method="GET"
+              class="search-form"
+              id="search-form"
+            >
+              <input
+                type="search"
+                name="q"
+                placeholder="Search news..."
+                class="search-input"
+                id="search-input"
+                autocomplete="off"
+              />
+              <button type="submit" class="search-btn" aria-label="Search">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </button>
+            </form>
+          </div>
+          <button
+            class="mobile-search-toggle btn-icon"
+            id="mobile-search-toggle"
+            aria-label="Toggle search"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
         </div>
-        <nav class="nav-bar" id="nav-bar">
-            <div class="container nav-inner">
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span></span><span></span><span></span>
-                </button>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="category.html?topic=politics" class="nav-link">Politics</a></li>
-                    <li><a href="category.html?topic=business" class="nav-link">Business</a></li>
-                    <li><a href="category.html?topic=technology" class="nav-link">Technology</a></li>
-                    <li><a href="category.html?topic=sports" class="nav-link">Sports</a></li>
-                    <li><a href="category.html?topic=world" class="nav-link">World</a></li>
-                    <li><a href="category.html?topic=health" class="nav-link">Health</a></li>
-                    <li><a href="category.html?topic=science" class="nav-link">Science</a></li>
-                    <li><a href="category.html?topic=entertainment" class="nav-link">Entertainment</a></li>
-                </ul>
-            </div>
-        </nav>
+      </div>
+      <nav class="nav-bar" id="nav-bar">
+        <div class="container nav-inner">
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Toggle navigation"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-list" id="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="category.html?topic=politics" class="nav-link"
+                >Politics</a
+              >
+            </li>
+            <li>
+              <a href="category.html?topic=business" class="nav-link"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a href="category.html?topic=technology" class="nav-link"
+                >Technology</a
+              >
+            </li>
+            <li>
+              <a href="category.html?topic=sports" class="nav-link">Sports</a>
+            </li>
+            <li>
+              <a href="category.html?topic=world" class="nav-link">World</a>
+            </li>
+            <li>
+              <a href="category.html?topic=health" class="nav-link">Health</a>
+            </li>
+            <li>
+              <a href="category.html?topic=science" class="nav-link">Science</a>
+            </li>
+            <li>
+              <a href="category.html?topic=entertainment" class="nav-link"
+                >Entertainment</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <!-- Bookmarks Drawer -->
     <aside class="bookmarks-drawer" id="bookmarks-drawer">
-        <div class="drawer-header">
-            <h3>Bookmarks</h3>
-            <button class="btn-icon drawer-close" id="drawer-close" aria-label="Close bookmarks">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-        </div>
-        <div class="drawer-body" id="bookmarks-list">
-            <p class="drawer-empty">No bookmarks yet. Click the bookmark icon on any article to save it.</p>
-        </div>
+      <div class="drawer-header">
+        <h3>Bookmarks</h3>
+        <button
+          class="btn-icon drawer-close"
+          id="drawer-close"
+          aria-label="Close bookmarks"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-body" id="bookmarks-list">
+        <p class="drawer-empty">
+          No bookmarks yet. Click the bookmark icon on any article to save it.
+        </p>
+      </div>
     </aside>
     <div class="drawer-overlay" id="drawer-overlay"></div>
 
     <main>
-    <section class="section">
+      <section class="section">
         <div class="container">
-            <div class="category-header">
-                <h1 class="category-title">Terms of Service</h1>
-                <p class="category-count">Rules for using Capital Press.</p>
-            </div>
-            <div class="article-body" style="max-width: 900px;">
-                <p><strong>Effective date:</strong> March 5, 2026</p>
-                <p>By accessing or using Capital Press, you agree to these terms.</p>
-                <h3>Acceptable Use</h3>
-                <ul>
-                    <li>Do not use the site for unlawful activity.</li>
-                    <li>Do not attempt to disrupt or compromise site security.</li>
-                    <li>Do not copy or republish content in violation of applicable laws.</li>
-                </ul>
-                <h3>Content</h3>
-                <p>All site content is provided for informational purposes. We strive for accuracy but do not guarantee completeness or uninterrupted availability.</p>
-                <h3>External Links</h3>
-                <p>Our articles may link to third-party websites. We are not responsible for external content or services.</p>
-                <h3>Changes to Terms</h3>
-                <p>We may update these terms from time to time. Continued use of the site after updates indicates acceptance of the revised terms.</p>
-                <p>For questions, please <a href="contact.html">contact us</a>.</p>
-            </div>
+          <div class="category-header">
+            <h1 class="category-title">Terms of Service</h1>
+            <p class="category-count">Rules for using Capital Press.</p>
+          </div>
+          <div class="article-body" style="max-width: 900px">
+            <p><strong>Effective date:</strong> March 5, 2026</p>
+            <p>
+              By accessing or using Capital Press, you agree to these terms.
+            </p>
+            <h3>Acceptable Use</h3>
+            <ul>
+              <li>Do not use the site for unlawful activity.</li>
+              <li>Do not attempt to disrupt or compromise site security.</li>
+              <li>
+                Do not copy or republish content in violation of applicable
+                laws.
+              </li>
+            </ul>
+            <h3>Content</h3>
+            <p>
+              All site content is provided for informational purposes. We strive
+              for accuracy but do not guarantee completeness or uninterrupted
+              availability.
+            </p>
+            <h3>External Links</h3>
+            <p>
+              Our articles may link to third-party websites. We are not
+              responsible for external content or services.
+            </p>
+            <h3>Changes to Terms</h3>
+            <p>
+              We may update these terms from time to time. Continued use of the
+              site after updates indicates acceptance of the revised terms.
+            </p>
+            <p>For questions, please <a href="contact.html">contact us</a>.</p>
+          </div>
         </div>
-    </section>
-</main>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer" id="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <img src="assets/capitalpress.png" alt="Capital Press" class="logo-image">
-                    </a>
-                    <p class="footer-tagline">Delivering accurate, timely news coverage from around the world.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="category.html?topic=politics">Politics</a></li>
-                        <li><a href="category.html?topic=business">Business</a></li>
-                        <li><a href="category.html?topic=technology">Technology</a></li>
-                        <li><a href="category.html?topic=sports">Sports</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>More</h4>
-                    <ul>
-                        <li><a href="category.html?topic=world">World</a></li>
-                        <li><a href="category.html?topic=health">Health</a></li>
-                        <li><a href="category.html?topic=science">Science</a></li>
-                        <li><a href="category.html?topic=entertainment">Entertainment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Capital Press. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img
+                src="assets/capitalpress.png"
+                alt="Capital Press"
+                class="logo-image"
+              />
+            </a>
+            <p class="footer-tagline">
+              Delivering accurate, timely news coverage from around the world.
+            </p>
+          </div>
+          <div class="footer-links">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="category.html?topic=politics">Politics</a></li>
+              <li><a href="category.html?topic=business">Business</a></li>
+              <li><a href="category.html?topic=technology">Technology</a></li>
+              <li><a href="category.html?topic=sports">Sports</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>More</h4>
+            <ul>
+              <li><a href="category.html?topic=world">World</a></li>
+              <li><a href="category.html?topic=health">Health</a></li>
+              <li><a href="category.html?topic=science">Science</a></li>
+              <li>
+                <a href="category.html?topic=entertainment">Entertainment</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Capital Press. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/config.js"></script>
@@ -192,9 +321,5 @@
     <script src="js/bookmarks.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/components.js"></script>
-</body>
-
+  </body>
 </html>
-
-
-
