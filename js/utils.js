@@ -7,7 +7,7 @@ const Utils = {
    * Format an ISO date string to a human-readable form.
    */
   formatDate(isoString) {
-    if (!isoString) return "";
+    if (!isoString) return '';
     const date = new Date(isoString);
     const now = new Date();
     const diff = now - date;
@@ -15,7 +15,7 @@ const Utils = {
     // Less than 1 hour ago
     if (diff < 3600000) {
       const mins = Math.floor(diff / 60000);
-      return mins <= 1 ? "Just now" : `${mins} min ago`;
+      return mins <= 1 ? 'Just now' : `${mins} min ago`;
     }
 
     // Less than 24 hours ago
@@ -27,14 +27,14 @@ const Utils = {
     // Less than 7 days ago
     if (diff < 604800000) {
       const days = Math.floor(diff / 86400000);
-      return days === 1 ? "Yesterday" : `${days} days ago`;
+      return days === 1 ? 'Yesterday' : `${days} days ago`;
     }
 
     // Otherwise regular format
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
     });
   },
 
@@ -42,11 +42,11 @@ const Utils = {
    * Format date for header display.
    */
   formatHeaderDate() {
-    return new Date().toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    return new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   },
 
@@ -54,19 +54,19 @@ const Utils = {
    * Truncate text to a max length.
    */
   truncate(text, maxLength = 160) {
-    if (!text) return "";
+    if (!text) return '';
     // Remove the NewsDataHub truncation message if present
-    text = text.replace(/\[Truncated.*?\]/gi, "").trim();
+    text = text.replace(/\[Truncated.*?\]/gi, '').trim();
     if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength).replace(/\s+\S*$/, "") + "…";
+    return text.substring(0, maxLength).replace(/\s+\S*$/, '') + '…';
   },
 
   /**
    * Escape HTML special characters.
    */
   escapeHtml(str) {
-    if (!str) return "";
-    const div = document.createElement("div");
+    if (!str) return '';
+    const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
   },
@@ -75,7 +75,7 @@ const Utils = {
    * Capitalize first letter of each word.
    */
   capitalize(str) {
-    if (!str) return "";
+    if (!str) return '';
     return str.replace(/\b\w/g, (c) => c.toUpperCase());
   },
 
@@ -124,7 +124,7 @@ const Utils = {
     try {
       sessionStorage.setItem(`article_${article.id}`, JSON.stringify(article));
     } catch (e) {
-      console.warn("Could not store article:", e);
+      console.warn('Could not store article:', e);
     }
   },
 
@@ -144,8 +144,8 @@ const Utils = {
    * Show an error banner in a parent element.
    */
   showError(parentEl, message) {
-    const banner = document.createElement("div");
-    banner.className = "error-banner";
+    const banner = document.createElement('div');
+    banner.className = 'error-banner';
     banner.innerHTML = `
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             <span>${Utils.escapeHtml(message)}</span>
@@ -156,52 +156,52 @@ const Utils = {
   /**
    * Convert technical errors into clear, user-facing messages.
    */
-  getErrorMessage(err, fallback = "Something went wrong. Please try again.") {
+  getErrorMessage(err, fallback = 'Something went wrong. Please try again.') {
     if (!err) return fallback;
 
     const status = Number(err.status || 0);
-    const rawMessage = String(err.message || "").trim();
+    const rawMessage = String(err.message || '').trim();
     const normalized = rawMessage.toLowerCase();
 
-    if (status === 429 || normalized.includes("rate limit")) {
-      return "Too many requests right now. Please wait a moment and try again.";
+    if (status === 429 || normalized.includes('rate limit')) {
+      return 'Too many requests right now. Please wait a moment and try again.';
     }
 
     if (
       status === 401 ||
       status === 403 ||
-      normalized.includes("api key") ||
-      normalized.includes("unauthorized") ||
-      normalized.includes("forbidden") ||
-      normalized.includes("authentication")
+      normalized.includes('api key') ||
+      normalized.includes('unauthorized') ||
+      normalized.includes('forbidden') ||
+      normalized.includes('authentication')
     ) {
-      return "We could not complete your request right now. Please try again shortly.";
+      return 'We could not complete your request right now. Please try again shortly.';
     }
 
-    if (status === 404 || normalized.includes("cannot get /api/news")) {
-      return "The service is temporarily unavailable. Please refresh and try again.";
+    if (status === 404 || normalized.includes('cannot get /api/news')) {
+      return 'The service is temporarily unavailable. Please refresh and try again.';
     }
 
     if (
-      normalized.includes("failed to fetch") ||
-      normalized.includes("networkerror") ||
-      normalized.includes("load failed")
+      normalized.includes('failed to fetch') ||
+      normalized.includes('networkerror') ||
+      normalized.includes('load failed')
     ) {
-      return "Connection issue detected. Please check your internet and try again.";
+      return 'Connection issue detected. Please check your internet and try again.';
     }
 
     if (
       status >= 500 ||
-      normalized.includes("server api key is not configured") ||
-      normalized.includes("failed to reach upstream")
+      normalized.includes('server api key is not configured') ||
+      normalized.includes('failed to reach upstream')
     ) {
-      return "News service is temporarily unavailable. Please try again shortly.";
+      return 'News service is temporarily unavailable. Please try again shortly.';
     }
 
-    const safeMessage = rawMessage.replace(/^api error \d+:\s*/i, "").trim();
+    const safeMessage = rawMessage.replace(/^api error \d+:\s*/i, '').trim();
     const hasTechnicalTerms =
       /(api|endpoint|token|key|server|upstream|vercel|auth|401|403|404|500|unauthorized|forbidden|cors)/i.test(
-        safeMessage,
+        safeMessage
       );
     if (
       safeMessage &&
@@ -220,43 +220,40 @@ const Utils = {
    Init common header elements
    ================================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Set header date
-  const headerDate = document.getElementById("header-date");
+  const headerDate = document.getElementById('header-date');
   if (headerDate) {
     headerDate.textContent = Utils.formatHeaderDate();
   }
 
   // Mobile search toggle
-  const searchToggle = document.getElementById("mobile-search-toggle");
-  const searchBar = document.getElementById("header-search");
+  const searchToggle = document.getElementById('mobile-search-toggle');
+  const searchBar = document.getElementById('header-search');
   if (searchToggle && searchBar) {
-    searchToggle.addEventListener("click", () => {
-      searchBar.classList.toggle("open");
-      if (searchBar.classList.contains("open")) {
-        searchBar.querySelector("input").focus();
+    searchToggle.addEventListener('click', () => {
+      searchBar.classList.toggle('open');
+      if (searchBar.classList.contains('open')) {
+        searchBar.querySelector('input').focus();
       }
     });
   }
 
   // Nav toggle
-  const navToggle = document.getElementById("nav-toggle");
-  const navList = document.getElementById("nav-list");
+  const navToggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
   if (navToggle && navList) {
-    navToggle.addEventListener("click", () => {
-      navList.classList.toggle("open");
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
     });
   }
 
   // Highlight active nav link
   const currentUrl = window.location.href;
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.classList.remove("active");
-    if (
-      link.href === currentUrl ||
-      currentUrl.includes(link.getAttribute("href"))
-    ) {
-      link.classList.add("active");
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.classList.remove('active');
+    if (link.href === currentUrl || currentUrl.includes(link.getAttribute('href'))) {
+      link.classList.add('active');
     }
   });
 });
