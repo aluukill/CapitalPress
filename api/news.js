@@ -88,7 +88,6 @@ export default async function handler(req, res) {
     const totalResults = body.totalResults || 0;
     const hasMore = currentPage * pageSize < totalResults;
 
-    // Transform to match the format the client expects
     const transformed = {
       data: (body.articles || []).map((article) => {
         const url = article.url || '';
