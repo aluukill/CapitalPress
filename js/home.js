@@ -2,18 +2,18 @@
    home.js — Homepage logic
    ================================================================ */
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // Show skeletons while loading
-  const latestGrid = document.getElementById('latest-grid');
-  const latestSpinner = document.getElementById('latest-spinner');
-  const carouselTrack = document.getElementById('carousel-track');
+  const latestGrid = document.getElementById("latest-grid");
+  const latestSpinner = document.getElementById("latest-spinner");
+  const carouselTrack = document.getElementById("carousel-track");
 
   // Show skeletons for category previews
   const categoryRows = {
-    technology: document.getElementById('tech-row'),
-    sports: document.getElementById('sports-row'),
-    world: document.getElementById('world-row'),
-    politics: document.getElementById('politics-row'),
+    technology: document.getElementById("tech-row"),
+    sports: document.getElementById("sports-row"),
+    world: document.getElementById("world-row"),
+    politics: document.getElementById("politics-row"),
   };
 
   // Show skeleton loading states
@@ -28,20 +28,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (carouselResult.data.length > 0) {
       carouselTrack.innerHTML = carouselResult.data
         .map((a) => Components.createCarouselSlide(a))
-        .join('');
+        .join("");
       Components.initCarousel();
     } else {
-      document.getElementById('hero-section').style.display = 'none';
+      document.getElementById("hero-section").style.display = "none";
     }
   } catch (err) {
-    console.error('Carousel error:', err);
-    document.getElementById('hero-section').style.display = 'none';
+    console.error("Carousel error:", err);
+    document.getElementById("hero-section").style.display = "none";
   }
 
   // --- Load Latest News ---
   try {
     const latestResult = await API.fetchLatest(6);
-    if (latestSpinner) latestSpinner.style.display = 'none';
+    if (latestSpinner) latestSpinner.style.display = "none";
     if (latestResult.data.length > 0) {
       Components.renderCards(latestGrid, latestResult.data);
     } else {
@@ -49,17 +49,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         '<p style="color:var(--color-text-muted);">No articles available at the moment.</p>';
     }
   } catch (err) {
-    console.error('Latest news error:', err);
-    if (latestSpinner) latestSpinner.style.display = 'none';
-    latestGrid.innerHTML = '';
+    console.error("Latest news error:", err);
+    if (latestSpinner) latestSpinner.style.display = "none";
+    latestGrid.innerHTML = "";
     Utils.showError(
       latestGrid.parentElement,
-      Utils.getErrorMessage(err, 'Failed to load latest news. Please try again.')
+      Utils.getErrorMessage(
+        err,
+        "Failed to load latest news. Please try again.",
+      ),
     );
   }
 
   // --- Load Category Previews ---
-  const categories = ['technology', 'sports', 'world', 'politics'];
+  const categories = ["technology", "sports", "world", "politics"];
 
   // Load category previews sequentially to stay within API rate limits
   for (const topic of categories) {
@@ -67,7 +70,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!row) continue;
 
     try {
-      const result = await API.fetchByTopic(topic, CONFIG.CATEGORY_PREVIEW_COUNT);
+      const result = await API.fetchByTopic(
+        topic,
+        CONFIG.CATEGORY_PREVIEW_COUNT,
+      );
       if (result.data.length > 0) {
         Components.renderCards(row, result.data, { animate: true });
       } else {

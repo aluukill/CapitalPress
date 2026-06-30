@@ -20,19 +20,19 @@ const API = {
 
     // Default language
     if (!params.language) {
-      url.searchParams.set('language', CONFIG.DEFAULT_LANGUAGE);
+      url.searchParams.set("language", CONFIG.DEFAULT_LANGUAGE);
     }
 
     // Map all params to query string
     Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined && value !== null && value !== '') {
+      if (value !== undefined && value !== null && value !== "") {
         url.searchParams.set(key, value);
       }
     });
 
     // Default per_page
-    if (!url.searchParams.has('per_page')) {
-      url.searchParams.set('per_page', CONFIG.DEFAULT_PER_PAGE);
+    if (!url.searchParams.has("per_page")) {
+      url.searchParams.set("per_page", CONFIG.DEFAULT_PER_PAGE);
     }
 
     const maxAttempts = 3;
@@ -41,7 +41,7 @@ const API = {
       try {
         const res = await fetch(url.toString(), {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
           },
         });
 
@@ -56,8 +56,11 @@ const API = {
           }
 
           if (res.status === 429 && attempt < maxAttempts) {
-            const retryAfter = Number(res.headers.get('Retry-After')) || attempt;
-            await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
+            const retryAfter =
+              Number(res.headers.get("Retry-After")) || attempt;
+            await new Promise((resolve) =>
+              setTimeout(resolve, retryAfter * 1000),
+            );
             continue;
           }
 
@@ -92,7 +95,7 @@ const API = {
         return result;
       } catch (err) {
         if (attempt === maxAttempts) {
-          console.error('API fetch error:', err);
+          console.error("API fetch error:", err);
           throw err;
         }
       }
@@ -106,7 +109,7 @@ const API = {
     return this.fetchNews({
       per_page: perPage,
       cursor: cursor,
-      sort_by: 'date',
+      sort_by: "date",
     });
   },
 
@@ -118,7 +121,7 @@ const API = {
       topic: topic,
       per_page: perPage,
       cursor: cursor,
-      sort_by: 'date',
+      sort_by: "date",
     });
   },
 
@@ -130,7 +133,7 @@ const API = {
       q: query,
       per_page: perPage,
       cursor: cursor,
-      sort_by: 'relevance',
+      sort_by: "relevance",
     });
   },
 };
