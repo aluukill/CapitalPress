@@ -14,8 +14,17 @@ export default async function handler(req, res) {
   const hasTopic = !!query.topic;
 
   // NewsAPI valid categories for top-headlines
-  const validCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
-  const canUseTopHeadlines = hasTopic && validCategories.includes(query.topic) && !hasQuery;
+  const validCategories = [
+    'business',
+    'entertainment',
+    'general',
+    'health',
+    'science',
+    'sports',
+    'technology',
+  ];
+  const canUseTopHeadlines =
+    (hasTopic && validCategories.includes(query.topic) && !hasQuery) || (!hasTopic && !hasQuery);
 
   // Decide which endpoint to call
   const endpoint = canUseTopHeadlines ? 'top-headlines' : 'everything';
